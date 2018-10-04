@@ -284,6 +284,7 @@ for_window[class=^.*] border pixel 0
 for_window[window_role="pop-up"] floating enable
 for_window[window_role="task_dialog"] floating enbale
 for_window[class="netease-cloud-music"] floating enable
+for_window[class="feh"] floating enable
 for_window[class="vlc"] floating enable
 for_window[class="ncmpcpp"] floating enable
 
