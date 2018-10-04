@@ -64,14 +64,23 @@ class my_edit(Command):
         # content of the current directory.
         return self._tab_directory_content()
 
+# class empty(Command):
+#     """:empty
+
+#     Empties the trash directory ~/.Trash
+#     """
+
+#     def execute(self):
+#         self.fm.run("rm -rf ~/.Trash/{*,.[^.]*}")
+
 class empty(Command):
     """:empty
 
-    Empties the trash directory ~/.Trash
+    Empty the "Trashcan"
     """
 
     def execute(self):
-        self.fm.run("rm -rf ~/.Trash/{*,.[^.]*}")
+        self.fm.run("gio trash --empty")
 
 class extracthere(Command):
     def execute(self):
