@@ -18,7 +18,7 @@ alias auninstall='adb uninstall '
 alias apmclear='adb shell pm clear '
 alias aatop='adb shell dumpsys activity activities | grep mResumedActivity'
 alias aservices='adb shell dumpsys activity services '
-alias afs='adb shell "dumpsys activity top | grep mParent= | sed s/mParent=//g"'
+alias afragments='adb shell "dumpsys activity top | grep mParent= | sed s/mParent=//g"'
 alias astart-activity='adb shell am start -n '
 alias astart-service='adb shell am startservice -n '
 alias astop-service='adb shell am stopservice -n '
@@ -51,7 +51,7 @@ arecord() {
   else
     name="$1.mp4"
   fi  
-  adb shell screenrecord /sdcard/${name}
+  adb shell screenrecord sdcard/${name}
   echo "save to /sdcard/${name}"
 }
 
@@ -69,8 +69,8 @@ acap() {
         target_dir=$2
     fi
   fi
-  adb shell screencap -p /sdcard/${name}
-  adb pull /sdcard/${name} ${target_dir}/${name}
-  adb shell rm /sdcard/${name}
+  adb shell screencap -p sdcard/${name}
+  adb pull sdcard/${name} ${target_dir}/${name}
+  adb shell rm sdcard/${name}
   echo "save to $target_dir/${name}"
 }
